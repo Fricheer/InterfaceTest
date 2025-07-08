@@ -15,18 +15,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path as url
-from django.urls import path
+from django.urls import path,include
 from . import views
 from . import testdb,search
-
+from django.contrib import admin
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('runoob/', views.runoob),
-    path('Form/',views.Form),
+    path('Form03/',views.Form03),
     path('testdb/',testdb.testdb),
     path('testdb01/',testdb.testdb01),
     path('testdb02/', testdb.testdb_delete),
     url(r'^search-form/$', search.search_form),
     url(r'^search/$', search.search_get),
-    url(r'^search-post/$',search.search_post)
-
+    url(r'^search-post/$',search.search_post),
+    path('login/', views.Login),
+    path('Form/',views.Form),
+    path('Javascripts/',views.JavaScripts),
+    path('Jquery01/', views.Jquery),
+    path('app01/', include('app01.urls')),
+    path('accounts/', views.my_login_view),
 ]

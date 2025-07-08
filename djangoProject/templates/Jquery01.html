@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/plugins/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" style="margin-top: 20px">
+        <div class="row clearfix">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="邮箱">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">手机</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="手机号码">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="姓名">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">性别</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="性别">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">年龄</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="年龄">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">专业</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="专业">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">部门</label>
+                    <div class="col-sm-6">
+                        <select class="form-control">
+                            <option>信息技术部</option>
+                            <option>业务部</option>
+                            <option>售后部</option>
+                            <option>生产部</option>
+                            <option>财务部</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">职位</label>
+                    <div class="col-sm-6">
+                        <select class="form-control">
+                            <option>Java开发</option>
+                            <option>测试工程师</option>
+                            <option>运维工程师</option>
+                            <option>产品经理</option>
+                            <option>前端工程师</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">日期</label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" id="datetimepicker" placeholder="选择日期">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+
+<script src="/static/js/jquery-3.7.1.min.js"></script>
+<script src="/static/plugins/bootstrap-3.4.1/dist/js/bootstrap.min.js"></script>
+<script src="/static/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $('#datetimepicker').datetimepicker({
+        language: 'zh-CN', // 中文语言包
+        autoclose: 1, // 选中日期后自动关闭
+        format: 'yyyy-mm-dd', // 日期格式
+        minView: "month", // 最小日期显示单元，这里最小显示月份界面，即可以选择到日
+        todayBtn: 1, // 显示今天按钮
+        todayHighlight: 1, // 显示今天高亮
+    });
+</script>
+
+
+</body>
+</html>

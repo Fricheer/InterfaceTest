@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="pmd">123456789</span>
+
+<script type="text/javascript">
+    function show() {
+        var tag = document.getElementById('pmd');
+        var dataString = tag.innerText;
+
+        var firstChar = dataString[0];
+        var otherString = dataString.substring(1, dataString.length);
+        var newPmd = otherString + firstChar;
+
+        tag.innerText = newPmd;
+    }
+    setInterval(show,1000)
+
+</script>
+</body>
+</html>

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'TestModel',
+    'app01',
 ]
 
 MIDDLEWARE = [
@@ -84,10 +84,10 @@ DATABASES = {
     {
         'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
         'NAME': 'runoob', # 数据库名称
-        'HOST': '127.0.0.1', # 数据库地址，本机 ip 地址 127.0.0.1
+        'HOST': 'localhost', # 数据库地址，本机 ip 地址 127.0.0.1
         'PORT': 3306, # 端口
         'USER': 'root',  # 数据库用户名
-        'PASSWORD': 'Aa1314520', # 数据库密码
+        'PASSWORD': '123456789', # 数据库密码
     }
 }
 # DATABASES = {
@@ -143,3 +143,13 @@ STATIC_URL = '/static/' # 别名
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "statics"),
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',  # 使用Django的session认证
+        # 'rest_framework.authentication.TokenAuthentication', # 也可以用Token认证
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # 默认所有接口都需要登录
+    ],
+}

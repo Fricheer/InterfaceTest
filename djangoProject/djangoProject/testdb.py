@@ -1,15 +1,27 @@
 # -*- coding: utf-8 -*-
-
 from django.http import HttpResponse
+import sqlite3
+import base64
+import pickle
+import datetime
 
 from TestModel.models import Test
-
+import pymysql
 
 # 数据库操作
 def testdb(request):
-    test1 = Test(name='runoob')
+    name = request.GET.get('name', 'runoob')  # 没有就用默认值
+    age = request.GET.get('age', 18)          # 没有就用默认值
+    email = request.GET.get('email', 'unknown@example.com')  # 没有就用默认值
+    print(request.GET)
+    # 注意：GET获取到的都是字符串，age需要转成int
+    test1 = Test(
+        name=name,
+        age=int(age),
+        email=email
+    )
     test1.save()
-    return HttpResponse("<p>数据添加成功！</p>")
+    return HttpResponse(f"<p>数据添加成功！name={name}, age={age}, email={email}</p>")
 
 def testdb01(request):
     #初始化

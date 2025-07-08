@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="请输入添加的内容" id="userIput">
+<input type="button" value="输入添加" onclick="addCityinfo_02()">
+<ul id="city_02">
+
+</ul>
+
+<input type="button" value="单击添加" onclick="addCityinfo()">
+<ul id="city">
+
+</ul>
+<input type="button" value="双击添加" ondblclick="addCityinfo_01()">
+<ul id="city_01">
+
+</ul>
+
+<script type="text/javascript">
+    function addCityinfo() {
+        var newTag = document.createElement('li');
+        newTag.innerText = '中国联通';
+
+        var parentTag = document.getElementById("city");
+        parentTag.appendChild(newTag);
+    }
+
+    function addCityinfo_01() {
+        var newTag = document.createElement('li');
+        newTag.innerText = '中国联通';
+
+        var parentTag = document.getElementById("city_01");
+        parentTag.appendChild(newTag);
+    }
+
+    function addCityinfo_02() {
+        //找到输入标签
+        var userIput = document.getElementById('userIput');
+        //获取标签输入的内容
+        var text = userIput.value;
+        if (text.length > 0) {
+            //创建<li>标签
+            var newTag = document.createElement('li');
+            //给标签赋值输入的文本内容
+            newTag.innerText = text;
+            //找到<ul>标签
+            var parentTag = document.getElementById("city_02")
+            //把<li>标签以及内容添加到<ul>标签里
+            parentTag.appendChild(newTag);
+            //讲input框内容清空
+            userIput.value = '';
+        } else {
+            alert('输入不能为空');
+        }
+    }
+</script>
+</body>
+</html>

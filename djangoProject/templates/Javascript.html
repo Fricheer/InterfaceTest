@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menus {
+            width: 100px;
+            border: 10px #d43f3a;
+        }
+
+        .menus .header {
+            background: #7a43b6;
+            padding: 40px 20px;
+        }
+
+        .menus .item {
+            background: #7a43b6;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="menus">
+    <div class="header" onclick="myFunc()">大标题</div>
+    <div class="item" onclick="myFunc()">内容</div>
+</div>
+<script type="text/javascript">
+    function myFunc() {
+        alert('初学javascript')
+        var name = 'zero'
+        console.log(name);
+    }
+</script>
+
+</body>
+</html>
