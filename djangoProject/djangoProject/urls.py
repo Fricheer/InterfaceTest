@@ -14,8 +14,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from cgi import test
 from django.urls import re_path as url
 from django.urls import path,include
+from djangoProject import zero
 from . import views
 from . import testdb,search
 from django.contrib import admin
@@ -25,7 +27,13 @@ urlpatterns = [
     path('Form03/',views.Form03),
     path('testdb/',testdb.testdb),
     path('testdb01/',testdb.testdb01),
-    path('testdb02/', testdb.testdb_delete),
+    path('testdb_update/',testdb.testdb_update),
+    path('testdb_delete/', testdb.testdb_delete),
+    path('insert_blog/',testdb.insert_blog),
+    path('update_blog/',testdb.update_blog),
+    path('un/',testdb.un),
+    path('unadd/',testdb.unadd),
+    path('select_entry/',testdb.select_entry ),
     url(r'^search-form/$', search.search_form),
     url(r'^search/$', search.search_get),
     url(r'^search-post/$',search.search_post),
@@ -35,4 +43,5 @@ urlpatterns = [
     path('Jquery01/', views.Jquery),
     path('app01/', include('app01.urls')),
     path('accounts/', views.my_login_view),
+    path('cache/', zero.get_cache_data),
 ]

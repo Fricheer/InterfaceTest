@@ -65,7 +65,6 @@ def clear_session(request):
     request.session.clear()
     return JsonResponse({'msg': 'session已清除'})
 
-from django.http import JsonResponse
 
 def clear_all_session(request):
     request.session.flush()  # 清除服务端session并让sessionid失效

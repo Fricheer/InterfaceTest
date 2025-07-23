@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TestModel',
     'app01',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,41 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',  # 默认所有接口都需要登录
     ],
 }
+
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             "startup_nodes": [
+#                 {"host": "10.51.6.49", "port": "6379"},
+#             ],
+#             "PASSWORD": "",
+#             "decode_responses": True,
+#             "max_redirects": 3,
+#             "connect_timeout": 0.3,
+#             "socket_timeout": 0.3
+#         }
+#     }
+# }
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": [
+#             "redis://10.51.6.49:6379/1",
+#         ],
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             "CONNECTION_POOL_CLASS": "rediscluster.connection.ClusterConnectionPool",
+#             "CONNECTION_POOL_CLASS_KWARGS": {
+#                 "startup_nodes": [
+#                     {"host": "10.51.6.49", "port": 6379},
+#                 ],
+#                 "decode_responses": True,
+#                 "password": "",  # 如果 Redis 集群需要密码，请填写
+#             },
+#         },
+#     }
+# }
